@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DB35D4F8E957A5FB03585D5 /* libPods-Petpet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */; };
 		1028B6981DD8BA8E00A95014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6971DD8BA8E00A95014 /* main.m */; };
 		1028B69B1DD8BA8E00A95014 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B69A1DD8BA8E00A95014 /* AppDelegate.m */; };
 		1028B69E1DD8BA8E00A95014 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B69D1DD8BA8E00A95014 /* ViewController.m */; };
@@ -53,6 +54,9 @@
 		1028B6BA1DD8BA8E00A95014 /* PetpetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetpetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1028B6BE1DD8BA8E00A95014 /* PetpetUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetpetUITests.m; sourceTree = "<group>"; };
 		1028B6C01DD8BA8E00A95014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Petpet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF926EF55F43664CE793A92 /* Pods-Petpet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.release.xcconfig"; sourceTree = "<group>"; };
+		A60AB6C55E74AC632B14CD94 /* Pods-Petpet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB35D4F8E957A5FB03585D5 /* libPods-Petpet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,8 @@
 				1028B6B21DD8BA8E00A95014 /* PetpetTests */,
 				1028B6BD1DD8BA8E00A95014 /* PetpetUITests */,
 				1028B6941DD8BA8E00A95014 /* Products */,
+				80CB62E69217ECCAE8C80761 /* Pods */,
+				EC22611916EE0808C0EB99B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +150,23 @@
 			path = PetpetUITests;
 			sourceTree = "<group>";
 		};
+		80CB62E69217ECCAE8C80761 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A60AB6C55E74AC632B14CD94 /* Pods-Petpet.debug.xcconfig */,
+				7CF926EF55F43664CE793A92 /* Pods-Petpet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC22611916EE0808C0EB99B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1028B6C31DD8BA8E00A95014 /* Build configuration list for PBXNativeTarget "Petpet" */;
 			buildPhases = (
+				D0B5A66713969BCDB4E8408B /* [CP] Check Pods Manifest.lock */,
 				1028B68F1DD8BA8E00A95014 /* Sources */,
 				1028B6901DD8BA8E00A95014 /* Frameworks */,
 				1028B6911DD8BA8E00A95014 /* Resources */,
+				009A8761EA99976C155A0F40 /* [CP] Embed Pods Frameworks */,
+				BB78FF15FB3834B2E4497795 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,6 +300,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		009A8761EA99976C155A0F40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Petpet/Pods-Petpet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB78FF15FB3834B2E4497795 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Petpet/Pods-Petpet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0B5A66713969BCDB4E8408B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1028B68F1DD8BA8E00A95014 /* Sources */ = {
@@ -427,6 +502,7 @@
 		};
 		1028B6C41DD8BA8E00A95014 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A60AB6C55E74AC632B14CD94 /* Pods-Petpet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97365M2U5B;
@@ -439,6 +515,7 @@
 		};
 		1028B6C51DD8BA8E00A95014 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF926EF55F43664CE793A92 /* Pods-Petpet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97365M2U5B;
