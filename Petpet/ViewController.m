@@ -23,6 +23,7 @@
     [super viewDidLoad];
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = self.view.center;
+    loginButton.delegate = self;
     [self.view addSubview:loginButton];
     
     [[NSNotificationCenter defaultCenter]
