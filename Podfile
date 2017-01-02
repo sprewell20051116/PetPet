@@ -6,6 +6,9 @@
 target 'Petpet' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Messaging'
+pod 'Firebase/Storage'
+pod 'Firebase/Database'
 pod 'FBSDKLoginKit'
 
 end

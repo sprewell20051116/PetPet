@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DB35D4F8E957A5FB03585D5 /* libPods-Petpet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */; };
 		10055A941DD9FFB400F002F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10055A931DD9FFB400F002F4 /* GoogleService-Info.plist */; };
+		100E43DD1DFD5419007B2F07 /* PetAddPetProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 100E43DC1DFD5419007B2F07 /* PetAddPetProfilePage.m */; };
 		1028B6981DD8BA8E00A95014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6971DD8BA8E00A95014 /* main.m */; };
 		1028B69B1DD8BA8E00A95014 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B69A1DD8BA8E00A95014 /* AppDelegate.m */; };
 		1028B69E1DD8BA8E00A95014 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B69D1DD8BA8E00A95014 /* ViewController.m */; };
@@ -18,6 +19,14 @@
 		1028B6A91DD8BA8E00A95014 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1028B6A71DD8BA8E00A95014 /* LaunchScreen.storyboard */; };
 		1028B6B41DD8BA8E00A95014 /* PetpetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6B31DD8BA8E00A95014 /* PetpetTests.m */; };
 		1028B6BF1DD8BA8E00A95014 /* PetpetUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6BE1DD8BA8E00A95014 /* PetpetUITests.m */; };
+		104885471DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */; };
+		10B6FE671DEA94E700F73DB4 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B6FE661DEA94E700F73DB4 /* testImage.png */; };
+		10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */; };
+		10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */; };
+		10DAFC891E1792D90062AC1B /* baseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC821E1792D90062AC1B /* baseViewController.m */; };
+		10DAFC8A1E1792D90062AC1B /* FirebaseDatabaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC841E1792D90062AC1B /* FirebaseDatabaseModel.m */; };
+		10DAFC8B1E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC861E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m */; };
+		10DAFC901E17AD280062AC1B /* PetFirstPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC8F1E17AD280062AC1B /* PetFirstPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		10055A931DD9FFB400F002F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		100E43DB1DFD5419007B2F07 /* PetAddPetProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddPetProfilePage.h; sourceTree = "<group>"; };
+		100E43DC1DFD5419007B2F07 /* PetAddPetProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddPetProfilePage.m; sourceTree = "<group>"; };
 		1028B6931DD8BA8E00A95014 /* Petpet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petpet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1028B6971DD8BA8E00A95014 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1028B6991DD8BA8E00A95014 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +67,21 @@
 		1028B6BA1DD8BA8E00A95014 /* PetpetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetpetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1028B6BE1DD8BA8E00A95014 /* PetpetUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetpetUITests.m; sourceTree = "<group>"; };
 		1028B6C01DD8BA8E00A95014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		104885451DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddPetDetailedProfilePage.h; sourceTree = "<group>"; };
+		104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddPetDetailedProfilePage.m; sourceTree = "<group>"; };
+		10B6FE661DEA94E700F73DB4 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
+		10DAFC7D1E1792D90062AC1B /* baseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
+		10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
+		10DAFC7F1E1792D90062AC1B /* baseTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseTabbarViewController.h; sourceTree = "<group>"; };
+		10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseTabbarViewController.m; sourceTree = "<group>"; };
+		10DAFC811E1792D90062AC1B /* baseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseViewController.h; sourceTree = "<group>"; };
+		10DAFC821E1792D90062AC1B /* baseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseViewController.m; sourceTree = "<group>"; };
+		10DAFC831E1792D90062AC1B /* FirebaseDatabaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseDatabaseModel.h; sourceTree = "<group>"; };
+		10DAFC841E1792D90062AC1B /* FirebaseDatabaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseDatabaseModel.m; sourceTree = "<group>"; };
+		10DAFC851E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirebaseDatabaseModel+FBLogin.h"; sourceTree = "<group>"; };
+		10DAFC861E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirebaseDatabaseModel+FBLogin.m"; sourceTree = "<group>"; };
+		10DAFC8E1E17AD280062AC1B /* PetFirstPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFirstPage.h; sourceTree = "<group>"; };
+		10DAFC8F1E17AD280062AC1B /* PetFirstPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFirstPage.m; sourceTree = "<group>"; };
 		4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Petpet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF926EF55F43664CE793A92 /* Pods-Petpet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.release.xcconfig"; sourceTree = "<group>"; };
 		A60AB6C55E74AC632B14CD94 /* Pods-Petpet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,16 +138,25 @@
 		1028B6951DD8BA8E00A95014 /* Petpet */ = {
 			isa = PBXGroup;
 			children = (
+				10DAFC8D1E17AC8B0062AC1B /* Firebase */,
+				10DAFC8C1E1792EA0062AC1B /* baseViewControllers */,
+				10DAFC8E1E17AD280062AC1B /* PetFirstPage.h */,
+				10DAFC8F1E17AD280062AC1B /* PetFirstPage.m */,
 				1028B6991DD8BA8E00A95014 /* AppDelegate.h */,
 				1028B69A1DD8BA8E00A95014 /* AppDelegate.m */,
 				1028B69C1DD8BA8E00A95014 /* ViewController.h */,
 				1028B69D1DD8BA8E00A95014 /* ViewController.m */,
+				10B6FE661DEA94E700F73DB4 /* testImage.png */,
 				1028B69F1DD8BA8E00A95014 /* Main.storyboard */,
 				1028B6A51DD8BA8E00A95014 /* Assets.xcassets */,
 				1028B6A71DD8BA8E00A95014 /* LaunchScreen.storyboard */,
 				1028B6AA1DD8BA8E00A95014 /* Info.plist */,
 				1028B6A21DD8BA8E00A95014 /* Petpet.xcdatamodeld */,
 				10055A931DD9FFB400F002F4 /* GoogleService-Info.plist */,
+				100E43DB1DFD5419007B2F07 /* PetAddPetProfilePage.h */,
+				100E43DC1DFD5419007B2F07 /* PetAddPetProfilePage.m */,
+				104885451DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.h */,
+				104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */,
 				1028B6961DD8BA8E00A95014 /* Supporting Files */,
 			);
 			path = Petpet;
@@ -151,6 +186,30 @@
 				1028B6C01DD8BA8E00A95014 /* Info.plist */,
 			);
 			path = PetpetUITests;
+			sourceTree = "<group>";
+		};
+		10DAFC8C1E1792EA0062AC1B /* baseViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10DAFC7D1E1792D90062AC1B /* baseNavViewController.h */,
+				10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */,
+				10DAFC7F1E1792D90062AC1B /* baseTabbarViewController.h */,
+				10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */,
+				10DAFC811E1792D90062AC1B /* baseViewController.h */,
+				10DAFC821E1792D90062AC1B /* baseViewController.m */,
+			);
+			name = baseViewControllers;
+			sourceTree = "<group>";
+		};
+		10DAFC8D1E17AC8B0062AC1B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				10DAFC831E1792D90062AC1B /* FirebaseDatabaseModel.h */,
+				10DAFC841E1792D90062AC1B /* FirebaseDatabaseModel.m */,
+				10DAFC851E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.h */,
+				10DAFC861E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		80CB62E69217ECCAE8C80761 /* Pods */ = {
@@ -286,6 +345,7 @@
 				10055A941DD9FFB400F002F4 /* GoogleService-Info.plist in Resources */,
 				1028B6A61DD8BA8E00A95014 /* Assets.xcassets in Resources */,
 				1028B6A11DD8BA8E00A95014 /* Main.storyboard in Resources */,
+				10B6FE671DEA94E700F73DB4 /* testImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +418,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100E43DD1DFD5419007B2F07 /* PetAddPetProfilePage.m in Sources */,
+				10DAFC8B1E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m in Sources */,
+				10DAFC891E1792D90062AC1B /* baseViewController.m in Sources */,
+				10DAFC901E17AD280062AC1B /* PetFirstPage.m in Sources */,
 				1028B69E1DD8BA8E00A95014 /* ViewController.m in Sources */,
+				10DAFC8A1E1792D90062AC1B /* FirebaseDatabaseModel.m in Sources */,
+				104885471DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m in Sources */,
+				10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */,
 				1028B6A41DD8BA8E00A95014 /* Petpet.xcdatamodeld in Sources */,
+				10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */,
 				1028B69B1DD8BA8E00A95014 /* AppDelegate.m in Sources */,
 				1028B6981DD8BA8E00A95014 /* main.m in Sources */,
 			);
@@ -511,6 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97365M2U5B;
 				INFOPLIST_FILE = Petpet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HippoColors.Petpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -524,6 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 97365M2U5B;
 				INFOPLIST_FILE = Petpet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HippoColors.Petpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
