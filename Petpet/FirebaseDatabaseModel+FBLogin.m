@@ -37,4 +37,86 @@
         }
     }];
 }
+
+
+-(void) FBGetUserProfile : (void (^ _Nonnull) (id _Nullable userProfile)) success
+                 Failure :(void (^ _Nonnull) (NSError * _Nullable error)) failure
+
+{
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
+                                           parameters:nil]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             
+             //             [resultDic setObject:@"Value" forKey:@"your key"];
+             //             [resultDic setObject:[result valueForKey:@"name"] forKey:@"name"];
+             NSLog(@"fetched user:%@", result);
+             
+             success(result);
+         }];
+    } else {
+        
+        failure([self getLoginError]);
+        
+    }
+    
+}
+
+
+
+-(void) FBGetUserImageUrlWithSuccess : (void (^ _Nonnull) (id _Nullable userImageUrl)) success
+                             Failure :(void (^ _Nonnull) (NSError * _Nullable error)) failure
+
+{
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me/picture"
+                                           parameters:@{@"height" : @100,
+                                                        @"redirect" : @0,
+                                                        @"type": @"square",
+                                                        @"width" : @100}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        
+             if (error) {
+                 
+                 failure(error);
+                 
+             } else {
+                 NSLog(@"fetched picture:%@", result);
+                 
+                 success([[result valueForKey:@"data"] valueForKey:@"url"]);
+             }
+             
+         }];
+        
+    } else {
+
+        failure([self getLoginError]);
+        
+    }
+
+}
+
+-(BOOL) isCurrentFBlogin
+{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
+#pragma -private methods
+-(NSError *) getLoginError
+{
+    NSMutableDictionary* details = [NSMutableDictionary dictionary];
+    [details setValue:@"No login error" forKey:NSLocalizedDescriptionKey];
+    // populate the error object with the details
+    return [NSError errorWithDomain:@"login" code:200 userInfo:details];
+}
+
 @end

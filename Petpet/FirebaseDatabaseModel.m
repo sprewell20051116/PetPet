@@ -108,6 +108,24 @@
     }];
 }
 
+#pragma ERROR
+//- (id) endWorldHunger:(id)largeAmountsOfMonies error:(NSError**)error {
+//    // begin feeding the world's children...
+//    // it's all going well until....
+//    if (ohNoImOutOfMonies) {
+//        // sad, we can't solve world hunger, but we can let people know what went wrong!
+//        // init dictionary to be used to populate error object
+//        NSMutableDictionary* details = [NSMutableDictionary dictionary];
+//        [details setValue:@"ran out of money" forKey:NSLocalizedDescriptionKey];
+//        // populate the error object with the details
+//        *error = [NSError errorWithDomain:@"world" code:200 userInfo:details];
+//        // we couldn't feed the world's children...return nil..sniffle...sniffle
+//        return nil;
+//    }
+//    // wohoo! We fed the world's children. The world is now in lots of debt. But who cares?
+//    return YES;
+//}
+
 //
 //
 //
