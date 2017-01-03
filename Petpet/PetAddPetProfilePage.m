@@ -7,9 +7,11 @@
 //
 
 #import "PetAddPetProfilePage.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "UIColor+ADKHexPresentation.h"
 
 @interface PetAddPetProfilePage ()
+@property (strong, nonatomic) IBOutlet UILabel *BreedLab;
 @property (strong, nonatomic) IBOutlet UIScrollView *petScroller;
 @property (strong, nonatomic) IBOutlet UIView *petScrollContentView;
 @property (strong, nonatomic) IBOutlet UIButton *nextStepBtn;
@@ -22,6 +24,14 @@
     
     NSLog(@"petScrollerFrame = %@" , NSStringFromCGRect(_petScroller.frame));
     
+    
+    _nextStepBtn.layer.masksToBounds = YES;
+    _nextStepBtn.layer.cornerRadius = 5.0f;
+    _nextStepBtn.layer.borderWidth = 1.0f;
+    _nextStepBtn.layer.borderColor = [UIColor ADKColorWithHexString:@"#4A4A4A"].CGColor;
+    _nextStepBtn.backgroundColor = [UIColor ADKColorWithHexString:@"#D45949"];
+//    _nextStepBtn.enabled = NO;
+    
     CGRect contentViewFrame = _petScroller.frame;
     contentViewFrame.size.width = contentViewFrame.size.width * 1.5;
     contentViewFrame.origin = CGPointZero;
@@ -31,7 +41,7 @@
     [_petScroller addSubview:_petScrollContentView];
     
     // Do any additional setup after loading the view.
-    [_nextStepBtn setTitle:@"是狗！" forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +49,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+    if (scrollView.contentOffset.x <= (scrollView.frame.size.width / 3)) {
+        _BreedLab.text = @"狗";
+    } else {
+        _BreedLab.text = @"貓";
+    }
+}
 /*
 #pragma mark - Navigation
 
