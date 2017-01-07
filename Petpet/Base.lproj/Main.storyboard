@@ -338,6 +338,7 @@
                     <connections>
                         <outlet property="captureBtn" destination="qdc-S5-Pjd" id="PRp-vK-AYv"/>
                         <outlet property="captureResultImgView" destination="Dxp-yt-lWd" id="5oP-7o-7ME"/>
+                        <outlet property="controlPanelView" destination="IDk-OR-lg9" id="9Ce-Z2-POg"/>
                         <outlet property="previewView" destination="goa-eu-BoT" id="mrB-6R-8ug"/>
                         <outlet property="retakeBtn" destination="ftl-dR-zIs" id="BED-JA-FtQ"/>
                     </connections>

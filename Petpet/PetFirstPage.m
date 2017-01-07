@@ -53,8 +53,6 @@
 - (void) configUIwithLoginState {
     
     if ([[FirebaseDatabaseModel getInstance] isCurrentFBlogin]) {
-        
-        [_FBUserInfoView setHidden:NO];
 
         [[FirebaseDatabaseModel getInstance] FBGetUserProfile:^(id  _Nullable userProfile) {
             
@@ -65,6 +63,11 @@
                 
                 NSLog(@"Success get user image url = %@", userImageUrl);
                 [_FBUserImageView setImageWithURL:[NSURL URLWithString:userImageUrl]];
+                [UIView animateWithDuration:0.5f animations:^{
+                    [_FBUserInfoView setAlpha:1.0f];
+                }];
+                
+
                 
             } Failure:^(NSError * _Nullable error) {
                 //TODO: Error handler
@@ -76,7 +79,8 @@
             NSLog(@"%s Failed, %@", __PRETTY_FUNCTION__, error.localizedDescription);
         }];
     } else {
-        [_FBUserInfoView setHidden:YES];
+        
+        [_FBUserInfoView setAlpha:0.0f];
     }
 
 }

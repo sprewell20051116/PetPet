@@ -10,6 +10,7 @@
 #import <FastttCamera.h>
 
 @interface PetAddCameraPage () <FastttCameraDelegate>
+@property (strong, nonatomic) IBOutlet UIView *controlPanelView;
 @property (nonatomic, strong) FastttCamera *fastCamera;
 @property (strong, nonatomic) IBOutlet UIView *previewView;
 @property (strong, nonatomic) IBOutlet UIButton *captureBtn;
@@ -31,7 +32,7 @@
     _captureResultImgView.hidden = YES;
     
     _retakeBtn.frame = _captureBtn.frame;
-    [self.view addSubview:_retakeBtn];
+    [_controlPanelView addSubview:_retakeBtn];
     [self setCurrentViewStateCapturing:YES];
     
     [self hideStatusBarWithAnimation:NO];
@@ -83,16 +84,19 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
 -(void) setCurrentViewStateCapturing : (BOOL) isCapturiing
 {
     if (isCapturiing) {
-        
-        _captureBtn.alpha = 1.0;
-        [_retakeBtn setUserInteractionEnabled:YES];
-        _retakeBtn.alpha = 0.0;
-        [_retakeBtn setUserInteractionEnabled:NO];
+        [UIView animateWithDuration:0.3f animations:^{
        
+            _captureBtn.alpha = 1.0;
+            [_retakeBtn setUserInteractionEnabled:YES];
+            _retakeBtn.alpha = 0.0;
+            [_retakeBtn setUserInteractionEnabled:NO];
+            
+        }];
+        
         
     } else {
         
-        [UIView animateWithDuration:0.1f animations:^{
+        [UIView animateWithDuration:0.3f animations:^{
             
             _captureBtn.alpha = 0.0;
             [_retakeBtn setUserInteractionEnabled:NO];
