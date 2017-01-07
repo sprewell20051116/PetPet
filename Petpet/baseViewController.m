@@ -9,6 +9,7 @@
 #import "baseViewController.h"
 
 @interface baseViewController ()
+@property (strong, nonatomic)   UIWindow                    *statusBarWindow;
 
 @end
 
@@ -24,6 +25,51 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) hideStatusBarWithAnimation : (BOOL) animate
+{
+    if (animate) {
+        [UIView animateWithDuration:0.2f animations:^{
+            UIWindow *statusBarWindow = (UIWindow *)[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"];
+            CGRect frame = statusBarWindow.frame;
+            frame.origin.y = -20;
+            statusBarWindow.frame = frame;
+        }];
+        
+    } else {
+        
+        UIWindow *statusBarWindow = (UIWindow *)[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"];
+        CGRect frame = statusBarWindow.frame;
+        frame.origin.y = -20;
+        statusBarWindow.frame = frame;
+    }
+    
+}
+
+
+- (void) showStatusBarWithAnimation : (BOOL) animate
+{
+    if (animate) {
+        [UIView animateWithDuration:0.2f animations:^{
+            UIWindow *statusBarWindow = (UIWindow *)[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"];
+            CGRect frame = statusBarWindow.frame;
+            frame.origin.y = 0;
+            statusBarWindow.frame = frame;
+        }];
+        
+    } else {
+        
+        UIWindow *statusBarWindow = (UIWindow *)[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"];
+        CGRect frame = statusBarWindow.frame;
+        frame.origin.y = 0;
+        statusBarWindow.frame = frame;
+    }
+    
+}
+
+
+
+
 
 - (void) showPageWithStoryboardIDString : (NSString * _Nonnull) ViewControllerIDString
                           withAnimation : (BOOL) animation

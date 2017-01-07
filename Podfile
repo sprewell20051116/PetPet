@@ -12,5 +12,7 @@ pod 'Firebase/Database'
 pod 'FBSDKLoginKit'
 pod 'AFNetworking', '~> 3.0.4'
 pod 'AppDevKit'
+pod 'FastttCamera'
+
 end
 

@@ -20,6 +20,7 @@
 		1028B6B41DD8BA8E00A95014 /* PetpetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6B31DD8BA8E00A95014 /* PetpetTests.m */; };
 		1028B6BF1DD8BA8E00A95014 /* PetpetUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6BE1DD8BA8E00A95014 /* PetpetUITests.m */; };
 		104885471DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */; };
+		10B57A061E21084B00FEE614 /* PetAddDonePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B57A051E21084B00FEE614 /* PetAddDonePage.m */; };
 		10B6FE671DEA94E700F73DB4 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B6FE661DEA94E700F73DB4 /* testImage.png */; };
 		10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */; };
 		10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */; };
@@ -27,6 +28,7 @@
 		10DAFC8A1E1792D90062AC1B /* FirebaseDatabaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC841E1792D90062AC1B /* FirebaseDatabaseModel.m */; };
 		10DAFC8B1E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC861E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m */; };
 		10DAFC901E17AD280062AC1B /* PetFirstPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC8F1E17AD280062AC1B /* PetFirstPage.m */; };
+		10E070481E1D483D00594088 /* PetAddCameraPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E070471E1D483D00594088 /* PetAddCameraPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		1028B6C01DD8BA8E00A95014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		104885451DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddPetDetailedProfilePage.h; sourceTree = "<group>"; };
 		104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddPetDetailedProfilePage.m; sourceTree = "<group>"; };
+		10B57A041E21084B00FEE614 /* PetAddDonePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddDonePage.h; sourceTree = "<group>"; };
+		10B57A051E21084B00FEE614 /* PetAddDonePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddDonePage.m; sourceTree = "<group>"; };
 		10B6FE661DEA94E700F73DB4 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		10DAFC7D1E1792D90062AC1B /* baseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
 		10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		10DAFC861E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FirebaseDatabaseModel+FBLogin.m"; sourceTree = "<group>"; };
 		10DAFC8E1E17AD280062AC1B /* PetFirstPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetFirstPage.h; sourceTree = "<group>"; };
 		10DAFC8F1E17AD280062AC1B /* PetFirstPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetFirstPage.m; sourceTree = "<group>"; };
+		10E070461E1D483D00594088 /* PetAddCameraPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddCameraPage.h; sourceTree = "<group>"; };
+		10E070471E1D483D00594088 /* PetAddCameraPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddCameraPage.m; sourceTree = "<group>"; };
 		4D5B2DE29A5E7CCE461A71BA /* libPods-Petpet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Petpet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF926EF55F43664CE793A92 /* Pods-Petpet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.release.xcconfig"; sourceTree = "<group>"; };
 		A60AB6C55E74AC632B14CD94 /* Pods-Petpet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petpet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petpet/Pods-Petpet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +163,10 @@
 				100E43DC1DFD5419007B2F07 /* PetAddPetProfilePage.m */,
 				104885451DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.h */,
 				104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */,
+				10E070461E1D483D00594088 /* PetAddCameraPage.h */,
+				10E070471E1D483D00594088 /* PetAddCameraPage.m */,
+				10B57A041E21084B00FEE614 /* PetAddDonePage.h */,
+				10B57A051E21084B00FEE614 /* PetAddDonePage.m */,
 				1028B6961DD8BA8E00A95014 /* Supporting Files */,
 			);
 			path = Petpet;
@@ -424,6 +434,8 @@
 				10DAFC901E17AD280062AC1B /* PetFirstPage.m in Sources */,
 				1028B69E1DD8BA8E00A95014 /* ViewController.m in Sources */,
 				10DAFC8A1E1792D90062AC1B /* FirebaseDatabaseModel.m in Sources */,
+				10B57A061E21084B00FEE614 /* PetAddDonePage.m in Sources */,
+				10E070481E1D483D00594088 /* PetAddCameraPage.m in Sources */,
 				104885471DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m in Sources */,
 				10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */,
 				1028B6A41DD8BA8E00A95014 /* Petpet.xcdatamodeld in Sources */,

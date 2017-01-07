@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1778" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Pet Add Camera Page-->
         <scene sceneID="ymv-5Y-CFJ">
             <objects>
-                <viewController id="3eO-kQ-Slo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetAddCameraPage" id="3eO-kQ-Slo" customClass="PetAddCameraPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wUA-yG-Kev"/>
                         <viewControllerLayoutGuide type="bottom" id="kYh-FC-iGI"/>
@@ -246,12 +246,131 @@
                     <view key="view" contentMode="scaleToFill" id="4ms-Df-4eq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goa-eu-BoT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="375"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="goa-eu-BoT" secondAttribute="height" multiplier="1:1" id="AlW-4X-07J"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dxp-yt-lWd">
+                                <rect key="frame" x="0.0" y="44" width="375" height="375"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEW-Ip-4tu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="barTintColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Pet Photo" id="H8o-a9-rIm">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9v5-Gk-njp">
+                                            <color key="tintColor" red="0.37254901959999998" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnClicked:" destination="3eO-kQ-Slo" id="gZL-4T-l5B"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDk-OR-lg9">
+                                <rect key="frame" x="0.0" y="419" width="375" height="248"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-S5-Pjd">
+                                        <rect key="frame" x="137" y="74" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="HCU-YM-Dj0"/>
+                                            <constraint firstAttribute="height" constant="100" id="mmp-Ay-D7c"/>
+                                        </constraints>
+                                        <state key="normal" image="CameraBtn"/>
+                                        <connections>
+                                            <action selector="captrueBtnClicked:" destination="3eO-kQ-Slo" eventType="touchUpInside" id="L6I-By-Csz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-gX-0WY">
+                                        <rect key="frame" x="35" y="174" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0PS-F8-pgX"/>
+                                            <constraint firstAttribute="height" constant="40" id="tlG-7T-Wji"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="photos"/>
+                                        <connections>
+                                            <action selector="photoPickerClicked:" destination="3eO-kQ-Slo" eventType="touchUpInside" id="SQq-oU-7Vj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0F-sc-GLJ">
+                                        <rect key="frame" x="309" y="179" width="31" height="30"/>
+                                        <state key="normal" title="略過">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="skipBtnClicked:" destination="3eO-kQ-Slo" eventType="touchUpInside" id="irf-W4-skf"/>
+                                            <segue destination="6zx-GM-cjF" kind="show" id="XE5-nb-aw2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bx8-gX-0WY" firstAttribute="top" secondItem="qdc-S5-Pjd" secondAttribute="bottom" id="aGt-ia-X10"/>
+                                    <constraint firstItem="qdc-S5-Pjd" firstAttribute="centerY" secondItem="IDk-OR-lg9" secondAttribute="centerY" id="d5x-oc-Bun"/>
+                                    <constraint firstItem="qdc-S5-Pjd" firstAttribute="centerX" secondItem="IDk-OR-lg9" secondAttribute="centerX" id="ss2-FV-vOv"/>
+                                    <constraint firstItem="H0F-sc-GLJ" firstAttribute="centerY" secondItem="bx8-gX-0WY" secondAttribute="centerY" id="tr0-Ia-avs"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0F-sc-GLJ" secondAttribute="trailing" constant="35" id="z08-XZ-u5w"/>
+                                    <constraint firstItem="bx8-gX-0WY" firstAttribute="leading" secondItem="IDk-OR-lg9" secondAttribute="leading" constant="35" id="zGH-De-ExE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dxp-yt-lWd" firstAttribute="height" secondItem="goa-eu-BoT" secondAttribute="height" id="09b-7c-RhJ"/>
+                            <constraint firstItem="IDk-OR-lg9" firstAttribute="top" secondItem="Dxp-yt-lWd" secondAttribute="bottom" id="0OR-Sm-HGk"/>
+                            <constraint firstAttribute="trailing" secondItem="IDk-OR-lg9" secondAttribute="trailing" id="1au-jo-nwn"/>
+                            <constraint firstItem="IDk-OR-lg9" firstAttribute="leading" secondItem="4ms-Df-4eq" secondAttribute="leading" id="1lv-tt-aVU"/>
+                            <constraint firstAttribute="trailing" secondItem="FEW-Ip-4tu" secondAttribute="trailing" id="5Zz-WL-ztX"/>
+                            <constraint firstItem="goa-eu-BoT" firstAttribute="leading" secondItem="4ms-Df-4eq" secondAttribute="leading" id="9WW-eO-BBu"/>
+                            <constraint firstItem="Dxp-yt-lWd" firstAttribute="centerX" secondItem="goa-eu-BoT" secondAttribute="centerX" id="9si-gd-kug"/>
+                            <constraint firstItem="Dxp-yt-lWd" firstAttribute="width" secondItem="goa-eu-BoT" secondAttribute="width" id="Jsg-EZ-O78"/>
+                            <constraint firstItem="kYh-FC-iGI" firstAttribute="top" secondItem="IDk-OR-lg9" secondAttribute="bottom" id="O1E-63-IvE"/>
+                            <constraint firstItem="FEW-Ip-4tu" firstAttribute="leading" secondItem="4ms-Df-4eq" secondAttribute="leading" id="VN0-Tg-28F"/>
+                            <constraint firstItem="FEW-Ip-4tu" firstAttribute="top" secondItem="4ms-Df-4eq" secondAttribute="top" id="Yhi-0e-Qcd"/>
+                            <constraint firstItem="Dxp-yt-lWd" firstAttribute="centerY" secondItem="goa-eu-BoT" secondAttribute="centerY" id="big-iK-2df"/>
+                            <constraint firstAttribute="trailing" secondItem="goa-eu-BoT" secondAttribute="trailing" id="kcy-WT-z5A"/>
+                            <constraint firstItem="goa-eu-BoT" firstAttribute="top" secondItem="4ms-Df-4eq" secondAttribute="top" constant="44" id="unD-En-hVb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="captureBtn" destination="qdc-S5-Pjd" id="PRp-vK-AYv"/>
+                        <outlet property="captureResultImgView" destination="Dxp-yt-lWd" id="5oP-7o-7ME"/>
+                        <outlet property="previewView" destination="goa-eu-BoT" id="mrB-6R-8ug"/>
+                        <outlet property="retakeBtn" destination="ftl-dR-zIs" id="BED-JA-FtQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5y-m0-B05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ftl-dR-zIs">
+                    <rect key="frame" x="0.0" y="0.0" width="171" height="171"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="repeat"/>
+                    <connections>
+                        <action selector="retakeBtnClicked:" destination="3eO-kQ-Slo" eventType="touchUpInside" id="Qmx-UB-hsN"/>
+                    </connections>
+                </button>
             </objects>
-            <point key="canvasLocation" x="2601" y="147"/>
+            <point key="canvasLocation" x="2616.8000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--Pet Add Done Page-->
+        <scene sceneID="yna-va-MGQ">
+            <objects>
+                <viewController storyboardIdentifier="PetAddDonePage" id="6zx-GM-cjF" customClass="PetAddDonePage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sfS-tC-m50"/>
+                        <viewControllerLayoutGuide type="bottom" id="agW-7a-fGH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EJX-wO-3Mq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xZ-c0-Uul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3529" y="139"/>
         </scene>
         <!--Item-->
         <scene sceneID="U4t-bX-1rz">
@@ -313,7 +432,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Yh-Le-vPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="359" y="139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qRN-EB-CqL">
@@ -336,7 +455,10 @@
     </scenes>
     <resources>
         <image name="Add" width="171" height="171"/>
+        <image name="CameraBtn" width="90" height="90"/>
         <image name="cat" width="171" height="171"/>
         <image name="dog" width="171" height="171"/>
+        <image name="photos" width="171" height="171"/>
+        <image name="repeat" width="171" height="171"/>
     </resources>
 </document>

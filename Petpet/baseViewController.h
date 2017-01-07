@@ -18,4 +18,8 @@
                           MessageString : (NSString * __nullable) messageStr
                               BtnString : (NSString * __nullable) btnString
                            andBtnAction : (void (^ __nullable)(UIAlertAction * __nullable action)) action;
+
+- (void) showStatusBarWithAnimation : (BOOL) animate;
+- (void) hideStatusBarWithAnimation : (BOOL) animate;
+
 @end
