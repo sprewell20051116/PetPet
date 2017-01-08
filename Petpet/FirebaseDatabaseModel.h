@@ -10,41 +10,28 @@
 @import Firebase;
 
 @interface FirebaseDatabaseModel : NSObject
-+ (instancetype) getInstance;
++ (_Nonnull instancetype ) getInstance;
 
-//
-//-(NSDictionary *) setNotificationDicWithTitleString : (NSString *) titleString
-//                                      andBodyString : (NSString *) bodyString;
-//
-//- (void) setNotificationDataWithDic : (NSDictionary*) NotificationDic
-//                            Success : (void (^)())success
-//                            Failure : (void (^)(NSError *error))failure;
-//
-//- (void) readValue;
-//- (void) readNotificationHistoryWithSuccess : (void (^) (NSArray * HistoryData)) success
-//                                    Failure : (void (^) (NSError * error)) failure;
-//
-//
-//- (void) setDataWithDic : (NSDictionary*) DataDic
-//                Success : (void (^)())success
-//                Failure : (void (^)(NSError *error))failure;
-//
-
-- (void) addRegisterDataWithRegisterIDString : (NSString *) registerString
-                                     Success : (void (^)())success
-                                     Failure : (void (^)(NSError *error))failure;
+- (void) addRegisterDataWithRegisterIDString : (NSString * _Nonnull) registerString
+                                     Success : (void (^ _Nullable)())success
+                                     Failure : (void (^ _Nullable)(NSError * _Nullable error))failure;
 
 
-- (void) retreiveRegisterDataByQueryIDString : (NSString*) IDString
-                                     Success : (void (^) (FIRDataSnapshot * data)) success
-                                     Failure : (void (^)(NSError *error)) failure;
+- (void) retreiveRegisterDataByQueryIDString : (NSString * _Nonnull) IDString
+                                     Success : (void (^ _Nullable) (FIRDataSnapshot * _Nullable data)) success
+                                     Failure : (void (^ _Nullable)(NSError * _Nullable error)) failure;
 
-- (void) loginAsAnomymounSuccess : (void (^) (FIRUser * user)) success
-                         Failure :(void (^)(NSError *error)) failure;
+- (void) loginAsAnomymounSuccess : (void (^ _Nullable) (FIRUser * _Nullable user)) success
+                         Failure :(void (^ _Nullable)(NSError * _Nullable error)) failure;
 
-- (FIRUser *) getcurrentUser;
+- (FIRUser * _Nullable) getcurrentUser;
 
-- (void) deleteCurrentUserSuccess : (void (^) ()) success
-                          Failure :(void (^)(NSError *error)) failure;
+- (void) deleteCurrentUserSuccess : (void (^ _Nullable) ()) success
+                          Failure :(void (^ _Nullable)(NSError * _Nullable error)) failure;
+
+- (void) uploadImage : (UIImage * _Nonnull) image
+   FirebaseFileName : (NSString * _Nonnull) fileName
+            Success : (void (^ _Nullable) (FIRStorageMetadata * _Nullable metadata)) success
+            Failure : (void (^ _Nullable) (NSError * _Nullable error)) failure;
 
 @end

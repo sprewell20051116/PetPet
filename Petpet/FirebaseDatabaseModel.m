@@ -33,6 +33,8 @@
     {
         self.ref = [[FIRDatabase database] reference];
         // do more thing about init;
+
+        
     }
     return self;
 }
@@ -107,6 +109,52 @@
         }
     }];
 }
+
+
+#pragma Firebase storage functions
+
+-(NSString *) getFirebaseStorageURL
+{
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]];
+    if (dictionary) {
+        return [NSString stringWithFormat:@"gs://%@", [dictionary objectForKey:@"STORAGE_BUCKET"]];
+    }
+    return nil;
+}
+
+
+-(void) uploadImage : (UIImage *) image
+   FirebaseFileName : (NSString *) fileName
+            Success : (void (^) (FIRStorageMetadata * _Nullable metadata)) success
+            Failure : (void (^) (NSError *error)) failure
+{
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    FIRStorage *storage = [FIRStorage storage];
+    
+    // Create a storage reference from our storage service
+    
+    FIRStorageReference *storageRef = [storage referenceForURL:[self getFirebaseStorageURL]];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    // Create a reference to the file you want to upload
+    NSString *imageChildName = [NSString stringWithFormat:@"images/%@.png", fileName];
+    FIRStorageReference *riversRef = [storageRef child:imageChildName];
+    
+    [riversRef putData:imageData metadata:nil
+            completion:^(FIRStorageMetadata * _Nullable metadata,
+                         NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Error uploading: %@", error);
+                    failure (error);
+                }
+                NSLog(@"matadata = %@", metadata);
+                success(metadata);
+                
+            }];
+}
+
 
 #pragma ERROR
 //- (id) endWorldHunger:(id)largeAmountsOfMonies error:(NSError**)error {

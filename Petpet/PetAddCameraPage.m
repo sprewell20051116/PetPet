@@ -7,6 +7,7 @@
 //
 
 #import "PetAddCameraPage.h"
+#import "FirebaseDatabaseModel.h"
 #import <FastttCamera.h>
 
 @interface PetAddCameraPage () <FastttCameraDelegate>
@@ -16,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *captureBtn;
 @property (strong, nonatomic) IBOutlet UIImageView *captureResultImgView;
 @property (strong, nonatomic) IBOutlet UIButton *retakeBtn;
+@property (strong, nonatomic) IBOutlet UIButton *skipBtn;
+@property (strong, nonatomic) IBOutlet UIButton *completeBtn;
 
 @end
 
@@ -106,7 +109,8 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
             [_retakeBtn setUserInteractionEnabled:YES];
             _retakeBtn.alpha = 0.0;
             [_retakeBtn setUserInteractionEnabled:NO];
-            
+            [_skipBtn setAlpha:0.0];
+            [_skipBtn setUserInteractionEnabled:NO];
         }];
         
         
@@ -118,6 +122,9 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
             [_retakeBtn setUserInteractionEnabled:NO];
             _retakeBtn.alpha = 1.0;
             [_retakeBtn setUserInteractionEnabled:YES];
+            [_skipBtn setAlpha:1.0];
+            [_skipBtn setUserInteractionEnabled:YES];
+            
         }];
 
         
@@ -133,6 +140,28 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
 }
 - (IBAction)skipBtnClicked:(id)sender {
     
+    
+    // this is for test
+    if (_captureResultImgView.image) {
+        [[FirebaseDatabaseModel getInstance] uploadImage:_captureResultImgView.image FirebaseFileName:@"petAvatar" Success:^(FIRStorageMetadata * _Nullable metadata) {
+            
+        } Failure:^(NSError * _Nullable error) {
+            
+        }];
+    }
+
+    [self pushNavPageWithStoryboardIDString:@"PetAddPetDetailedProfilePage"];
+}
+- (IBAction)completeBtnClicked:(id)sender {
+    
+    if (_captureResultImgView.image) {
+        [[FirebaseDatabaseModel getInstance] uploadImage:_captureResultImgView.image FirebaseFileName:@"petAvatar" Success:^(FIRStorageMetadata * _Nullable metadata) {
+            
+        } Failure:^(NSError * _Nullable error) {
+            
+        }];
+    }
+    [self pushNavPageWithStoryboardIDString:@"PetAddPetDetailedProfilePage"];
 }
 
 - (IBAction)photoPickerClicked:(id)sender {

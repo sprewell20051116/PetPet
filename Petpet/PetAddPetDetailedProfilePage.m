@@ -7,9 +7,9 @@
 //
 
 #import "PetAddPetDetailedProfilePage.h"
-
+#import "PetUserView.h"
 @interface PetAddPetDetailedProfilePage ()
-@property (strong, nonatomic) IBOutlet UIView *petProfileView;
+@property (strong, nonatomic) IBOutlet PetUserView *petProfileView;
 
 @end
 
@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
