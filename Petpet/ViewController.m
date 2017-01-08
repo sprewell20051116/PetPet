@@ -25,10 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    loginButton.center = self.view.center;
-//    loginButton.delegate = self;
-//    [self.view addSubview:loginButton];
+    
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -47,7 +44,6 @@
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString *filePath = [NSString stringWithFormat:@"file:%@/myimage.png", documentsDirectory];
 
-        
         FIRStorage *storage = [FIRStorage storage];
         FIRStorageReference *storageRef = [storage referenceForURL:FirebaseStoragePath];
         FIRStorageReference *riversRef = [storageRef child:@"images/rivers.jpg"];
@@ -65,16 +61,7 @@
                 _testImageView.image = islandImage;
             }
         }];
-        
-        
-        // User is logged in, do work such as go to next view controller.
-//        NSLog(@"Get notification appID %@", [[FBSDKAccessToken currentAccessToken] appID]);
-//        NSLog(@"Get notification tokenString %@", [[FBSDKAccessToken currentAccessToken] tokenString]);
-//        NSLog(@"Get notification expirationDate %@", [[FBSDKAccessToken currentAccessToken] expirationDate]);
-//        NSLog(@"Get notification userID %@", [[FBSDKAccessToken currentAccessToken] userID]);
     }
-
-    
 }
 
 

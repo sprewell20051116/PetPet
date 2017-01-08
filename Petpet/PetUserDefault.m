@@ -10,8 +10,6 @@
 
 // user default key
 static NSString * userDefaultReadTutorKey = @"userDefaultReadTutorKey";
-static NSString * userDefaultUserNameKey = @"userDefaultUserNameKey";
-static NSString * userDefaultUserImageFileURLKey = @"userDefaultUserImageFileURLKey";
 
 @implementation PetUserDefault
 
@@ -29,37 +27,6 @@ static NSString * userDefaultUserImageFileURLKey = @"userDefaultUserImageFileURL
         return YES;
     }
     return NO;
-}
-
-//
-// Current User Name
-//
-+(void) setUserNameWithNameString : (NSString *) userNameString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:userNameString forKey:userDefaultUserNameKey];
-}
-
-+(NSString *) getUserNameWithNameString : (NSString *) userNameString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:userDefaultUserNameKey];
-}
-
-
-//
-// Current User Image file path
-//
-+(void) setUserImageFilePathString : (NSString *) userImageFilePath
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:userImageFilePath forKey:userDefaultUserImageFileURLKey];
-}
-
-+(NSString *) getUserImageFilePathString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:userDefaultUserImageFileURLKey];
 }
 
 @end

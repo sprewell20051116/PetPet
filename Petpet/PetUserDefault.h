@@ -12,7 +12,6 @@
 
 +(BOOL) isReadTutor;
 +(void) setReadTutor;
-+(void) setUserImageFilePathString : (NSString *) userImageFilePath;
-+(NSString *) getUserImageFilePathString;
+
 
 @end

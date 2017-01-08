@@ -11,6 +11,7 @@
 #import <FastttCamera.h>
 
 @interface PetAddCameraPage () <FastttCameraDelegate>
+
 @property (strong, nonatomic) IBOutlet UIView *controlPanelView;
 @property (nonatomic, strong) FastttCamera *fastCamera;
 @property (strong, nonatomic) IBOutlet UIView *previewView;
@@ -109,8 +110,8 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
             [_retakeBtn setUserInteractionEnabled:YES];
             _retakeBtn.alpha = 0.0;
             [_retakeBtn setUserInteractionEnabled:NO];
-            [_skipBtn setAlpha:0.0];
-            [_skipBtn setUserInteractionEnabled:NO];
+            [_skipBtn setAlpha:1.0];
+            [_skipBtn setUserInteractionEnabled:YES];
         }];
         
         
@@ -122,8 +123,8 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
             [_retakeBtn setUserInteractionEnabled:NO];
             _retakeBtn.alpha = 1.0;
             [_retakeBtn setUserInteractionEnabled:YES];
-            [_skipBtn setAlpha:1.0];
-            [_skipBtn setUserInteractionEnabled:YES];
+            [_skipBtn setAlpha:0.0];
+            [_skipBtn setUserInteractionEnabled:NO];
             
         }];
 

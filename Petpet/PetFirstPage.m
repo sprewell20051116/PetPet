@@ -87,19 +87,41 @@
 
 - (IBAction)withoutLoginBtnClicked:(id)sender {
     
-    [self showSimpleAlertWithTitleString:@"先開始用再說" MessageString:@"將來您還可以在設定頁面中進行各種新增寵物的動作" BtnString:@"好der" andBtnAction:^(UIAlertAction * _Nullable action) {
-        [self showPageWithStoryboardIDString:@"baseTabbarViewController" withAnimation:YES completion:nil];
-    }];
+    [self showTwoBtnAlertWithTitleString:@"先開始用再說"
+                           MessageString:@"將來您還可以在設定頁面中進行各種新增寵物的動作"
+                               BtnString:@"好der"
+                               BtnString:@"不要der" andBtnAction:^(UIAlertAction *action) {
+                                   [self showPageWithStoryboardIDString:@"baseTabbarViewController" withAnimation:YES completion:nil];
+
+                               } andBtnAction:^(UIAlertAction *action) {
+                                   NSLog(@"Do nothing");
+                               }];
+    
     
 }
 - (IBAction)addBtnClicked:(id)sender {
-    [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
     
-    if (_FBUserImageView.image) {
-        NSString *userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
-        NSLog(@"save file path = %@", userImageFilePath);
-       [PetUserDefault setUserImageFilePathString:userImageFilePath];
+    if ([[FirebaseDatabaseModel getInstance] isCurrentFBlogin]) {
+        NSLog(@"!!!?");
+        [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
+    } else {
+        [self showTwoBtnAlertWithTitleString:@"還沒有註冊"
+                               MessageString:@"您還是可以新增寵物，但是要有登入才能幫您做雲端的備份唷~"
+                                   BtnString:@"已知悉，前往新增寵物"
+                                   BtnString:@"我還是註冊好了" andBtnAction:^(UIAlertAction *action) {
+                                       [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
+                                   } andBtnAction:^(UIAlertAction *action) {
+                                       NSLog(@"Do nothing");
+                                   }];
+
     }
+    
+    
+    
+//    if (_FBUserImageView.image) {
+//        NSString *userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
+//        NSLog(@"save file path = %@", userImageFilePath);
+//    }
 }
 
 

@@ -125,6 +125,39 @@
 }
 
 
+- (void) showTwoBtnAlertWithTitleString : (NSString *) titleString
+                          MessageString : (NSString *) messageStr
+                              BtnString : (NSString *) btnString
+                              BtnString : (NSString *) secondBtnString
+                           andBtnAction : (void (^ __nullable)(UIAlertAction *action)) yesAction
+                           andBtnAction : (void (^ __nullable)(UIAlertAction *action)) cancelAction
+{
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:titleString
+                                                                   message:messageStr
+                                                            preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:btnString
+                                style:UIAlertActionStyleDefault
+                                handler:yesAction];
+    
+    [alert addAction:yesButton];
+    
+    UIAlertAction* cancelButton = [UIAlertAction
+                                actionWithTitle:secondBtnString
+                                style:UIAlertActionStyleCancel
+                                handler:cancelAction];
+    
+    [alert addAction:cancelButton];
+    
+    [self presentViewController:alert animated:true completion:nil];
+    
+}
+
+
+
 
 /*
 #pragma mark - Navigation

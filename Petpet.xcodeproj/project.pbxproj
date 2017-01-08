@@ -24,6 +24,7 @@
 		10B57A091E21E79B00FEE614 /* PetUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B57A081E21E79B00FEE614 /* PetUserDefault.m */; };
 		10B57A101E21F80000FEE614 /* PetUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B57A0F1E21F80000FEE614 /* PetUserView.m */; };
 		10B6FE671DEA94E700F73DB4 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B6FE661DEA94E700F73DB4 /* testImage.png */; };
+		10B81CA11E22854F002F75EE /* PetUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B81CA01E22854F002F75EE /* PetUserInfo.m */; };
 		10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */; };
 		10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */; };
 		10DAFC891E1792D90062AC1B /* baseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC821E1792D90062AC1B /* baseViewController.m */; };
@@ -80,6 +81,8 @@
 		10B57A0E1E21F80000FEE614 /* PetUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetUserView.h; sourceTree = "<group>"; };
 		10B57A0F1E21F80000FEE614 /* PetUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetUserView.m; sourceTree = "<group>"; };
 		10B6FE661DEA94E700F73DB4 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
+		10B81C9F1E22854F002F75EE /* PetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetUserInfo.h; sourceTree = "<group>"; };
+		10B81CA01E22854F002F75EE /* PetUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetUserInfo.m; sourceTree = "<group>"; };
 		10DAFC7D1E1792D90062AC1B /* baseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
 		10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
 		10DAFC7F1E1792D90062AC1B /* baseTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseTabbarViewController.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				10B57A071E21E79B00FEE614 /* PetUserDefault.h */,
 				10B57A081E21E79B00FEE614 /* PetUserDefault.m */,
+				10B81C9F1E22854F002F75EE /* PetUserInfo.h */,
+				10B81CA01E22854F002F75EE /* PetUserInfo.m */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B81CA11E22854F002F75EE /* PetUserInfo.m in Sources */,
 				100E43DD1DFD5419007B2F07 /* PetAddPetProfilePage.m in Sources */,
 				10DAFC8B1E1792D90062AC1B /* FirebaseDatabaseModel+FBLogin.m in Sources */,
 				10DAFC891E1792D90062AC1B /* baseViewController.m in Sources */,

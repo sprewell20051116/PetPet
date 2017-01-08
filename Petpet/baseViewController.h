@@ -19,6 +19,15 @@
                               BtnString : (NSString * __nullable) btnString
                            andBtnAction : (void (^ __nullable)(UIAlertAction * __nullable action)) action;
 
+
+- (void) showTwoBtnAlertWithTitleString : (NSString * _Nonnull) titleString
+                          MessageString : (NSString * __nullable) messageStr
+                              BtnString : (NSString * __nullable) btnString
+                              BtnString : (NSString * __nullable) secondBtnString
+                           andBtnAction : (void (^ __nullable)(UIAlertAction *action)) yesAction
+                           andBtnAction : (void (^ __nullable)(UIAlertAction *action)) cancelAction;
+
+
 - (BOOL) pushNavPageWithStoryboardIDString : (NSString * _Nonnull) ViewControllerIDString;
 
 - (void) showStatusBarWithAnimation : (BOOL) animate;
