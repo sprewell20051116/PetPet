@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +30,7 @@
                                 </constraints>
                                 <state key="normal" image="Add"/>
                                 <connections>
-                                    <segue destination="ruG-bZ-eTo" kind="show" id="5jP-c8-MuB"/>
+                                    <action selector="addBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HfR-pw-SVN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建立寵物資訊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPc-F3-pD2">
@@ -95,17 +96,29 @@
                                     <constraint firstItem="lm0-MT-kCk" firstAttribute="top" secondItem="XqR-8V-SrX" secondAttribute="top" constant="8" id="uUi-kJ-5VN"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYb-BI-YgD">
+                                <rect key="frame" x="277" y="617" width="62" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="直接使用">
+                                    <color key="titleColor" red="0.37254901959999998" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="withoutLoginBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nMt-5H-Mao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97647058819999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sPF-bb-AsQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H08-jd-yE7"/>
                             <constraint firstItem="rPc-F3-pD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MNA-32-1bw"/>
                             <constraint firstItem="XqR-8V-SrX" firstAttribute="height" secondItem="1ID-Jf-sDs" secondAttribute="height" multiplier="2" id="QfT-BW-aj8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gYb-BI-YgD" secondAttribute="bottom" constant="20" id="ROW-GX-JX9"/>
                             <constraint firstItem="XqR-8V-SrX" firstAttribute="centerY" secondItem="1ID-Jf-sDs" secondAttribute="centerY" id="aRh-PG-RaU"/>
                             <constraint firstItem="qXd-ur-d0c" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/4" id="ayN-za-UdT"/>
                             <constraint firstItem="1ID-Jf-sDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bNS-L0-jG4"/>
                             <constraint firstItem="XqR-8V-SrX" firstAttribute="centerX" secondItem="1ID-Jf-sDs" secondAttribute="centerX" id="bjN-ba-VtX"/>
                             <constraint firstItem="qXd-ur-d0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaP-Ek-Ixm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYb-BI-YgD" secondAttribute="trailing" constant="20" id="gdb-XZ-h58"/>
                             <constraint firstItem="rPc-F3-pD2" firstAttribute="top" secondItem="qXd-ur-d0c" secondAttribute="bottom" constant="37" id="hKB-M2-dyO"/>
                             <constraint firstItem="1ID-Jf-sDs" firstAttribute="top" secondItem="sPF-bb-AsQ" secondAttribute="bottom" constant="8" id="l4N-ty-gzg"/>
                             <constraint firstItem="XqR-8V-SrX" firstAttribute="width" secondItem="1ID-Jf-sDs" secondAttribute="width" multiplier="1.5" id="oYH-Uo-Ipa"/>
@@ -298,12 +311,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0F-sc-GLJ">
                                         <rect key="frame" x="309" y="179" width="31" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="略過">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="skipBtnClicked:" destination="3eO-kQ-Slo" eventType="touchUpInside" id="irf-W4-skf"/>
-                                            <segue destination="6zx-GM-cjF" kind="show" id="XE5-nb-aw2"/>
+                                            <segue destination="h56-vH-7md" kind="show" id="765-vp-sQZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -355,6 +369,32 @@
             </objects>
             <point key="canvasLocation" x="2616.8000000000002" y="138.98050974512745"/>
         </scene>
+        <!--Pet Add Pet Detailed Profile Page-->
+        <scene sceneID="vhn-Ce-Yxj">
+            <objects>
+                <viewController storyboardIdentifier="PetAddPetDetailedProfilePage" id="h56-vH-7md" customClass="PetAddPetDetailedProfilePage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hmZ-6k-B5E"/>
+                        <viewControllerLayoutGuide type="bottom" id="i3b-Mh-UdP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3QK-de-NCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="petProfileView" destination="tPz-gK-pfP" id="fjF-ro-fxe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="530-wr-Zj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="tPz-gK-pfP">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="3368.8000000000002" y="138.98050974512745"/>
+        </scene>
         <!--Pet Add Done Page-->
         <scene sceneID="yna-va-MGQ">
             <objects>
@@ -371,12 +411,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xZ-c0-Uul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3529" y="139"/>
+            <point key="canvasLocation" x="4142" y="139"/>
         </scene>
         <!--Item-->
         <scene sceneID="U4t-bX-1rz">
             <objects>
-                <viewController storyboardIdentifier="PetAddPetDetailedProfilePage" id="mdk-ef-Nwh" customClass="PetAddPetDetailedProfilePage" sceneMemberID="viewController">
+                <viewController id="mdk-ef-Nwh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G2P-h3-5JI"/>
                         <viewControllerLayoutGuide type="bottom" id="EfT-BY-8km"/>
@@ -435,10 +475,10 @@
             </objects>
             <point key="canvasLocation" x="359" y="139"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tabbar View Controller-->
         <scene sceneID="qRN-EB-CqL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="d49-m0-UVU" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="baseTabbarViewController" automaticallyAdjustsScrollViewInsets="NO" id="d49-m0-UVU" customClass="baseTabbarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mJY-0s-Ga8">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

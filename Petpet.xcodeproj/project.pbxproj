@@ -21,6 +21,7 @@
 		1028B6BF1DD8BA8E00A95014 /* PetpetUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028B6BE1DD8BA8E00A95014 /* PetpetUITests.m */; };
 		104885471DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */; };
 		10B57A061E21084B00FEE614 /* PetAddDonePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B57A051E21084B00FEE614 /* PetAddDonePage.m */; };
+		10B57A091E21E79B00FEE614 /* PetUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B57A081E21E79B00FEE614 /* PetUserDefault.m */; };
 		10B6FE671DEA94E700F73DB4 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B6FE661DEA94E700F73DB4 /* testImage.png */; };
 		10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */; };
 		10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAFC801E1792D90062AC1B /* baseTabbarViewController.m */; };
@@ -73,6 +74,8 @@
 		104885461DFD9A8C0096ABF5 /* PetAddPetDetailedProfilePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddPetDetailedProfilePage.m; sourceTree = "<group>"; };
 		10B57A041E21084B00FEE614 /* PetAddDonePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAddDonePage.h; sourceTree = "<group>"; };
 		10B57A051E21084B00FEE614 /* PetAddDonePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAddDonePage.m; sourceTree = "<group>"; };
+		10B57A071E21E79B00FEE614 /* PetUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetUserDefault.h; sourceTree = "<group>"; };
+		10B57A081E21E79B00FEE614 /* PetUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetUserDefault.m; sourceTree = "<group>"; };
 		10B6FE661DEA94E700F73DB4 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		10DAFC7D1E1792D90062AC1B /* baseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
 		10DAFC7E1E1792D90062AC1B /* baseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		1028B6951DD8BA8E00A95014 /* Petpet */ = {
 			isa = PBXGroup;
 			children = (
+				10B57A0A1E21E7A100FEE614 /* General */,
 				10DAFC8D1E17AC8B0062AC1B /* Firebase */,
 				10DAFC8C1E1792EA0062AC1B /* baseViewControllers */,
 				10DAFC8E1E17AD280062AC1B /* PetFirstPage.h */,
@@ -196,6 +200,15 @@
 				1028B6C01DD8BA8E00A95014 /* Info.plist */,
 			);
 			path = PetpetUITests;
+			sourceTree = "<group>";
+		};
+		10B57A0A1E21E7A100FEE614 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				10B57A071E21E79B00FEE614 /* PetUserDefault.h */,
+				10B57A081E21E79B00FEE614 /* PetUserDefault.m */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 		10DAFC8C1E1792EA0062AC1B /* baseViewControllers */ = {
@@ -440,6 +453,7 @@
 				10DAFC881E1792D90062AC1B /* baseTabbarViewController.m in Sources */,
 				1028B6A41DD8BA8E00A95014 /* Petpet.xcdatamodeld in Sources */,
 				10DAFC871E1792D90062AC1B /* baseNavViewController.m in Sources */,
+				10B57A091E21E79B00FEE614 /* PetUserDefault.m in Sources */,
 				1028B69B1DD8BA8E00A95014 /* AppDelegate.m in Sources */,
 				1028B6981DD8BA8E00A95014 /* main.m in Sources */,
 			);

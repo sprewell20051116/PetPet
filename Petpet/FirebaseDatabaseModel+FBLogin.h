@@ -24,4 +24,7 @@
 -(void) FBGetUserImageUrlWithSuccess : (void (^ _Nonnull) (id _Nullable userImageUrl)) success
                              Failure :(void (^ _Nonnull) (NSError * _Nullable error)) failure;
 
+-(NSString *) saveFBUserImage : (UIImage*) userImage;
+
+
 @end

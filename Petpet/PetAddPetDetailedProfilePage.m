@@ -9,6 +9,7 @@
 #import "PetAddPetDetailedProfilePage.h"
 
 @interface PetAddPetDetailedProfilePage ()
+@property (strong, nonatomic) IBOutlet UIView *petProfileView;
 
 @end
 

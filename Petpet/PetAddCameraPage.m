@@ -26,16 +26,19 @@
     _fastCamera = [FastttCamera new];
     self.fastCamera.delegate = self;
     
+    [self hideStatusBarWithAnimation:NO];
+    
     [self fastttAddChildViewController:self.fastCamera];
     self.fastCamera.view.frame = _previewView.frame;
     _captureResultImgView.frame= _previewView.frame;
     _captureResultImgView.hidden = YES;
     
-    _retakeBtn.frame = _captureBtn.frame;
-    [_controlPanelView addSubview:_retakeBtn];
+    // init retakeBtn
+    [self init_retakeBtn];
+
     [self setCurrentViewStateCapturing:YES];
     
-    [self hideStatusBarWithAnimation:NO];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +82,19 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
     [self setCurrentViewStateCapturing:NO];
     //TODO: animate _captureResultImgView
     
+}
+
+
+#pragma private function - 
+-(void) init_retakeBtn
+{
+    //    _retakeBtn.frame = _captureBtn.frame;
+    CGRect frame = _retakeBtn.frame;
+    frame = _captureBtn.frame;
+    frame.size = CGSizeMake(frame.size.height * 0.8f, frame.size.width * 0.8f);
+    _retakeBtn.frame = frame;
+    _retakeBtn.center = _captureBtn.center;
+    [_controlPanelView addSubview:_retakeBtn];
 }
 
 -(void) setCurrentViewStateCapturing : (BOOL) isCapturiing

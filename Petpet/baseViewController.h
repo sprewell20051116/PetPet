@@ -19,6 +19,8 @@
                               BtnString : (NSString * __nullable) btnString
                            andBtnAction : (void (^ __nullable)(UIAlertAction * __nullable action)) action;
 
+- (BOOL) pushNavPageWithStoryboardIDString : (NSString * _Nonnull) ViewControllerIDString;
+
 - (void) showStatusBarWithAnimation : (BOOL) animate;
 - (void) hideStatusBarWithAnimation : (BOOL) animate;
 

@@ -9,6 +9,7 @@
 #import "PetFirstPage.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIView+ADKAnimationMacro.h"
+#import "PetUserDefault.h"
 
 @interface PetFirstPage ()
 @property (strong, nonatomic) IBOutlet UIButton *FBloginBtn;
@@ -63,11 +64,10 @@
                 
                 NSLog(@"Success get user image url = %@", userImageUrl);
                 [_FBUserImageView setImageWithURL:[NSURL URLWithString:userImageUrl]];
+                
                 [UIView animateWithDuration:0.5f animations:^{
                     [_FBUserInfoView setAlpha:1.0f];
                 }];
-                
-
                 
             } Failure:^(NSError * _Nullable error) {
                 //TODO: Error handler
@@ -85,6 +85,22 @@
 
 }
 
+- (IBAction)withoutLoginBtnClicked:(id)sender {
+    
+    [self showSimpleAlertWithTitleString:@"先開始用再說" MessageString:@"將來您還可以在設定頁面中進行各種新增寵物的動作" BtnString:@"好der" andBtnAction:^(UIAlertAction * _Nullable action) {
+        [self showPageWithStoryboardIDString:@"baseTabbarViewController" withAnimation:YES completion:nil];
+    }];
+    
+}
+- (IBAction)addBtnClicked:(id)sender {
+    [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
+    
+    if (_FBUserImageView.image) {
+        NSString *userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
+        NSLog(@"save file path = %@", userImageFilePath);
+       [PetUserDefault setUserImageFilePathString:userImageFilePath];
+    }
+}
 
 
 /*

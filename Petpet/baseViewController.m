@@ -68,9 +68,6 @@
 }
 
 
-
-
-
 - (void) showPageWithStoryboardIDString : (NSString * _Nonnull) ViewControllerIDString
                           withAnimation : (BOOL) animation
                              completion : (void (^ __nullable)(void))completion
@@ -82,6 +79,26 @@
                                                                  instantiateViewControllerWithIdentifier: ViewControllerIDString];
     [self presentViewController:destinationPage animated:YES completion:completion];
 }
+
+
+- (BOOL) pushNavPageWithStoryboardIDString : (NSString * _Nonnull) ViewControllerIDString
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle: nil];
+    
+    UIViewController *destinationPage = (UIViewController*)[mainStoryboard
+                                                            instantiateViewControllerWithIdentifier: ViewControllerIDString];
+    
+    if (self.navigationController) {
+        [self.navigationController pushViewController:destinationPage animated:YES];
+        return YES;
+    } else {
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 - (void) showSimpleAlertWithTitleString : (NSString *) titleString
                           MessageString : (NSString *) messageStr
@@ -106,6 +123,8 @@
     [self presentViewController:alert animated:true completion:nil];
 
 }
+
+
 
 /*
 #pragma mark - Navigation

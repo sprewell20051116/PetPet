@@ -24,6 +24,7 @@
     
     NSLog(@"petScrollerFrame = %@" , NSStringFromCGRect(_petScroller.frame));
     
+    [self hideStatusBarWithAnimation:NO];
     
     _nextStepBtn.layer.masksToBounds = YES;
     _nextStepBtn.layer.cornerRadius = 5.0f;

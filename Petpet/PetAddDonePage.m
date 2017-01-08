@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showStatusBarWithAnimation:YES];
+    [self showStatusBarWithAnimation:NO];
     // Do any additional setup after loading the view.
 }
 

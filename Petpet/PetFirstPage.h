@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "baseViewController.h"
 #import "FirebaseDatabaseModel.h"
 #import "FirebaseDatabaseModel+FBLogin.h"
-@interface PetFirstPage : UIViewController
+@interface PetFirstPage : baseViewController
 
 @end

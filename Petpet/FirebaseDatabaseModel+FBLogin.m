@@ -76,7 +76,7 @@
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me/picture"
                                            parameters:@{@"height" : @100,
                                                         @"redirect" : @0,
-                                                        @"type": @"square",
+                                                        @"type": @"large",
                                                         @"width" : @100}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         
@@ -86,7 +86,6 @@
                  
              } else {
                  NSLog(@"fetched picture:%@", result);
-                 
                  success([[result valueForKey:@"data"] valueForKey:@"url"]);
              }
              
@@ -109,6 +108,19 @@
     }
 }
 
+
+-(NSString *) saveFBUserImage : (UIImage*) userImage
+{
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    
+    NSData * binaryImageData = UIImagePNGRepresentation(userImage);
+    NSString *filePath = [basePath stringByAppendingPathComponent:@"userImage.png"];
+    
+    [binaryImageData writeToFile:filePath atomically:YES];
+    
+    return filePath;
+}
 
 #pragma -private methods
 -(NSError *) getLoginError
