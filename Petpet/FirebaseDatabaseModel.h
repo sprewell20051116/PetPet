@@ -10,6 +10,7 @@
 @import Firebase;
 
 @interface FirebaseDatabaseModel : NSObject
+
 + (_Nonnull instancetype ) getInstance;
 
 - (void) addRegisterDataWithRegisterIDString : (NSString * _Nonnull) registerString

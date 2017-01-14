@@ -15,41 +15,39 @@
 //
 //
 
-static NSString * userDefaultUserIDKey = @"userDefaultUserIDKey";
-static NSString * userDefaultUserNameKey = @"userDefaultUserNameKey";
-static NSString * userDefaultUserImageFileURLKey = @"userDefaultUserImageFileURLKey";
+
 
 @implementation PetUserInfo
 
 //
 // Current User Name
 //
-+(void) setUserNameWithNameString : (NSString *) userNameString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:userNameString forKey:userDefaultUserNameKey];
-}
-
-+(NSString *) getUserNameWithNameString : (NSString *) userNameString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:userDefaultUserNameKey];
-}
+//+(void) setUserNameWithNameString : (NSString *) userNameString
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setValue:userNameString forKey:userDefaultUserNameKey];
+//}
+//
+//+(NSString *) getUserNameWithNameString : (NSString *) userNameString
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    return [userDefaults valueForKey:userDefaultUserNameKey];
+//}
 
 //
 // Current User Image file path
 //
-+(void) setUserImageFilePathString : (NSString *) userImageFilePath
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:userImageFilePath forKey:userDefaultUserImageFileURLKey];
-}
-
-+(NSString *) getUserImageFilePathString
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults valueForKey:userDefaultUserImageFileURLKey];
-}
+//+(void) setUserImageFilePathString : (NSString *) userImageFilePath
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setValue:userImageFilePath forKey:userDefaultUserImageFileURLKey];
+//}
+//
+//+(NSString *) getUserImageFilePathString
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    return [userDefaults valueForKey:userDefaultUserImageFileURLKey];
+//}
 
 +(void) setUserIDInfoWithDIc : (NSDictionary *) UserDic
 {
@@ -57,5 +55,10 @@ static NSString * userDefaultUserImageFileURLKey = @"userDefaultUserImageFileURL
     [userDefaults setValue:UserDic forKey:userDefaultUserIDKey];
 }
 
++(NSString *) getUserImageFilePath
+{
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        return [[userDefaults valueForKey:userDefaultUserIDKey] valueForKey:userDefaultUserImageFileURLKey];
+}
 
 @end

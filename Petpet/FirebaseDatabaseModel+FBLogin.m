@@ -86,6 +86,7 @@
                  
              } else {
                  NSLog(@"fetched picture:%@", result);
+                 
                  success([[result valueForKey:@"data"] valueForKey:@"url"]);
              }
              
@@ -121,6 +122,7 @@
     
     return filePath;
 }
+
 
 #pragma -private methods
 -(NSError *) getLoginError

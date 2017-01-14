@@ -10,10 +10,11 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface FirebaseDatabaseModel (FBLogin)
+@interface FirebaseDatabaseModel (FBLogin) 
+
+
 
 -(BOOL) isCurrentFBlogin;
-
 -(void) FBLoginWithPublicProfilefromViewController : (UIViewController* _Nonnull) viewController
                                            Success : (void (^ _Nonnull) (FIRUser * _Nullable user)) success
                                            Failure :(void (^ _Nonnull) (NSError * _Nullable error)) failure;
@@ -25,6 +26,4 @@
                              Failure :(void (^ _Nonnull) (NSError * _Nullable error)) failure;
 
 -(NSString *) saveFBUserImage : (UIImage*) userImage;
-
-
 @end

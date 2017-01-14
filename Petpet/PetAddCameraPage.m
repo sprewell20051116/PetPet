@@ -9,6 +9,7 @@
 #import "PetAddCameraPage.h"
 #import "FirebaseDatabaseModel.h"
 #import <FastttCamera.h>
+#import "PetAddPetDetailedProfilePage.h"
 
 @interface PetAddCameraPage () <FastttCameraDelegate>
 
@@ -143,26 +144,20 @@ didFinishScalingCapturedImage:(FastttCapturedImage *)capturedImage
     
     
     // this is for test
-    if (_captureResultImgView.image) {
-        [[FirebaseDatabaseModel getInstance] uploadImage:_captureResultImgView.image FirebaseFileName:@"petAvatar" Success:^(FIRStorageMetadata * _Nullable metadata) {
-            
-        } Failure:^(NSError * _Nullable error) {
-            
-        }];
-    }
-
     [self pushNavPageWithStoryboardIDString:@"PetAddPetDetailedProfilePage"];
 }
 - (IBAction)completeBtnClicked:(id)sender {
     
     if (_captureResultImgView.image) {
-        [[FirebaseDatabaseModel getInstance] uploadImage:_captureResultImgView.image FirebaseFileName:@"petAvatar" Success:^(FIRStorageMetadata * _Nullable metadata) {
-            
-        } Failure:^(NSError * _Nullable error) {
-            
-        }];
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                 bundle: nil];
+        PetAddPetDetailedProfilePage *destinationPage = (PetAddPetDetailedProfilePage*)[mainStoryboard instantiateViewControllerWithIdentifier: @"PetAddPetDetailedProfilePage"];
+        destinationPage.petImage = _captureResultImgView.image;
+
+        [self showViewController:destinationPage sender:nil];
+        
     }
-    [self pushNavPageWithStoryboardIDString:@"PetAddPetDetailedProfilePage"];
+    
 }
 
 - (IBAction)photoPickerClicked:(id)sender {

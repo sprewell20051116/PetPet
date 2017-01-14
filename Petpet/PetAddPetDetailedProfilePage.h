@@ -10,5 +10,5 @@
 #import "baseViewController.h"
 
 @interface PetAddPetDetailedProfilePage : baseViewController
-
+@property (strong, nonatomic) UIImage *petImage;
 @end

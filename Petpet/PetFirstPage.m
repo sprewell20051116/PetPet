@@ -10,13 +10,13 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIView+ADKAnimationMacro.h"
 #import "PetUserDefault.h"
+#import "PetUserInfo.h"
 
 @interface PetFirstPage ()
 @property (strong, nonatomic) IBOutlet UIButton *FBloginBtn;
 @property (strong, nonatomic) IBOutlet UIView *FBUserInfoView;
 @property (strong, nonatomic) IBOutlet UIImageView *FBUserImageView;
 @property (strong, nonatomic) IBOutlet UILabel *FBUserNameLab;
-
 @end
 
 @implementation PetFirstPage
@@ -102,7 +102,8 @@
 - (IBAction)addBtnClicked:(id)sender {
     
     if ([[FirebaseDatabaseModel getInstance] isCurrentFBlogin]) {
-        NSLog(@"!!!?");
+        
+//        [self saveUserData];
         [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
     } else {
         [self showTwoBtnAlertWithTitleString:@"還沒有註冊"
@@ -115,15 +116,27 @@
                                    }];
 
     }
-    
-    
-    
-//    if (_FBUserImageView.image) {
-//        NSString *userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
-//        NSLog(@"save file path = %@", userImageFilePath);
-//    }
 }
 
+
+- (void) saveUserData
+{
+    
+    NSString *userImageFilePath;
+    if (_FBUserImageView.image) {
+        userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
+        NSLog(@"save file path = %@", userImageFilePath);
+    } else {
+        userImageFilePath = userDefaultNoValue;
+    }
+    NSString *userID = [[FirebaseDatabaseModel getInstance] getcurrentUser].uid;
+    NSDictionary *userInfoContent = @{userDefaultUserIDKey : userID,
+                                      userDefaultUserImageFileURLKey : userImageFilePath};
+    
+    NSDictionary *userInfo = @{userDefaultUserIDKey : userInfoContent};
+    [PetUserInfo setUserIDInfoWithDIc:userInfo];
+    
+}
 
 /*
 #pragma mark - Navigation

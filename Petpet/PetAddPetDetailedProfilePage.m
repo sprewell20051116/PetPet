@@ -7,6 +7,7 @@
 //
 
 #import "PetAddPetDetailedProfilePage.h"
+#import "PetUserInfo.h"
 #import "PetUserView.h"
 @interface PetAddPetDetailedProfilePage ()
 @property (strong, nonatomic) IBOutlet PetUserView *petProfileView;
@@ -17,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _petProfileView.petAvatarImageView.image = _petImage;
+    _petProfileView.userImageView.image = [UIImage imageWithContentsOfFile:[PetUserInfo getUserImageFilePath]];
+    
     // Do any additional setup after loading the view.
     
 }
