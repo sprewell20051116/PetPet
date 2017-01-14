@@ -11,6 +11,7 @@
 
 
 @interface FirebaseDatabaseModel()
+@property (strong, nonatomic) UIImage *userImage;
 @property(strong, nonatomic) FIRDatabaseReference *ref;
 @end
 
@@ -155,6 +156,24 @@
             }];
 }
 
+-(BOOL) isUserImageAvailable
+{
+    if (_userImage) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(UIImage *) getUserImage
+{
+    return _userImage;
+}
+
+-(void) setUserImage : (UIImage *) userImage
+{
+    _userImage = userImage;
+}
 
 #pragma ERROR
 //- (id) endWorldHunger:(id)largeAmountsOfMonies error:(NSError**)error {

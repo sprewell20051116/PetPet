@@ -9,6 +9,10 @@
 #import "PetAddPetDetailedProfilePage.h"
 #import "PetUserInfo.h"
 #import "PetUserView.h"
+#import "FirebaseDatabaseModel.h"
+#import "FirebaseDatabaseModel+FBLogin.h"
+#import "UIImageView+AFNetworking.h"
+
 @interface PetAddPetDetailedProfilePage ()
 @property (strong, nonatomic) IBOutlet PetUserView *petProfileView;
 
@@ -18,8 +22,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _petProfileView.petAvatarImageView.image = _petImage;
-    _petProfileView.userImageView.image = [UIImage imageWithContentsOfFile:[PetUserInfo getUserImageFilePath]];
+    if (_petImage) {
+        _petProfileView.petAvatarImageView.image = _petImage;
+    } else {
+        _petProfileView.petAvatarImageView.image = [UIImage imageNamed:@"Avatar"];
+    }
+    
+    if ([[FirebaseDatabaseModel getInstance] isUserImageAvailable]) {
+        _petProfileView.userImageView.image = [[FirebaseDatabaseModel getInstance] getUserImage];
+    } else {
+        
+        // TODO: get facebook image url again.
+        [[FirebaseDatabaseModel getInstance] FBGetUserImageUrlWithSuccess:^(id  _Nullable userImageUrl)
+        {
+            
+            NSLog(@"Success get user image url = %@", userImageUrl);
+            [_petProfileView.userImageView setImageWithURL:[NSURL URLWithString:userImageUrl]];
+            
+        } Failure:^(NSError * _Nullable error) {
+            //TODO: Error handler
+            NSLog(@"%s Failed, %@", __PRETTY_FUNCTION__, error.localizedDescription);
+        }];
+    }
     
     // Do any additional setup after loading the view.
     

@@ -103,7 +103,7 @@
     
     if ([[FirebaseDatabaseModel getInstance] isCurrentFBlogin]) {
         
-//        [self saveUserData];
+        [self saveUserData];
         [self pushNavPageWithStoryboardIDString:@"PetAddPetProfilePage"];
     } else {
         [self showTwoBtnAlertWithTitleString:@"還沒有註冊"
@@ -118,24 +118,26 @@
     }
 }
 
+// 20170114 [Casper] mark saving data but saving in appDelegate
 
 - (void) saveUserData
 {
-    
-    NSString *userImageFilePath;
-    if (_FBUserImageView.image) {
-        userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
-        NSLog(@"save file path = %@", userImageFilePath);
-    } else {
-        userImageFilePath = userDefaultNoValue;
-    }
-    NSString *userID = [[FirebaseDatabaseModel getInstance] getcurrentUser].uid;
-    NSDictionary *userInfoContent = @{userDefaultUserIDKey : userID,
-                                      userDefaultUserImageFileURLKey : userImageFilePath};
-    
-    NSDictionary *userInfo = @{userDefaultUserIDKey : userInfoContent};
-    [PetUserInfo setUserIDInfoWithDIc:userInfo];
-    
+    [[FirebaseDatabaseModel getInstance] setUserImage:_FBUserImageView.image];
+//    
+//    NSString *userImageFilePath;
+//    if (_FBUserImageView.image) {
+//        userImageFilePath = [[FirebaseDatabaseModel getInstance] saveFBUserImage:_FBUserImageView.image];
+//        NSLog(@"save file path = %@", userImageFilePath);
+//    } else {
+//        userImageFilePath = userDefaultNoValue;
+//    }
+//    NSString *userID = [[FirebaseDatabaseModel getInstance] getcurrentUser].uid;
+//    NSDictionary *userInfoContent = @{userDefaultUserIDKey : userID,
+//                                      userDefaultUserImageFileURLKey : userImageFilePath};
+//    
+//    NSDictionary *userInfo = @{userDefaultUserIDKey : userInfoContent};
+//    [PetUserInfo setUserIDInfoWithDIc:userInfo];
+//    
 }
 
 /*

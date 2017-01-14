@@ -403,7 +403,7 @@
                                             <constraint firstAttribute="height" constant="120" id="yL9-xk-Q4Y"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-Cq-npJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-Cq-npJ">
                                         <rect key="frame" x="207.5" y="119.5" width="40" height="40"/>
                                     </imageView>
                                 </subviews>

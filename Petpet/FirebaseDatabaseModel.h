@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 @import Firebase;
 
-@interface FirebaseDatabaseModel : NSObject
+@interface FirebaseDatabaseModel : NSObject 
+
 
 + (_Nonnull instancetype ) getInstance;
 
@@ -35,4 +36,7 @@
             Success : (void (^ _Nullable) (FIRStorageMetadata * _Nullable metadata)) success
             Failure : (void (^ _Nullable) (NSError * _Nullable error)) failure;
 
+-(BOOL) isUserImageAvailable;
+-(UIImage *) getUserImage;
+-(void) setUserImage : (UIImage *) userImage;
 @end

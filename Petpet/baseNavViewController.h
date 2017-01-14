@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface baseNavViewController : UINavigationController
-
+@property (nonatomic, strong) UIImage *userImage;
 @end
