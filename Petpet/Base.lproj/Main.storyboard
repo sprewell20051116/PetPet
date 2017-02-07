@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jSX-0A-aNb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jSX-0A-aNb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -403,14 +403,24 @@
                                             <constraint firstAttribute="height" constant="120" id="yL9-xk-Q4Y"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-Cq-npJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-Cq-npJ">
                                         <rect key="frame" x="207.5" y="119.5" width="40" height="40"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-aa-9AT">
+                                        <rect key="frame" x="8" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fBF-Cz-hZr"/>
+                                            <constraint firstAttribute="width" constant="20" id="yhi-ot-8nB"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="31H-cU-aTE" firstAttribute="centerY" secondItem="tPz-gK-pfP" secondAttribute="centerY" id="0pL-66-n0P"/>
                                     <constraint firstItem="QG9-Cq-npJ" firstAttribute="bottom" secondItem="31H-cU-aTE" secondAttribute="bottom" id="49E-WA-PEy"/>
+                                    <constraint firstItem="1Lr-aa-9AT" firstAttribute="top" secondItem="tPz-gK-pfP" secondAttribute="top" id="K3p-0N-cIw"/>
+                                    <constraint firstItem="1Lr-aa-9AT" firstAttribute="leading" secondItem="tPz-gK-pfP" secondAttribute="leading" constant="8" id="LcN-1t-pC8"/>
                                     <constraint firstItem="QG9-Cq-npJ" firstAttribute="trailing" secondItem="31H-cU-aTE" secondAttribute="trailing" id="LdO-d3-LMf"/>
                                     <constraint firstAttribute="height" constant="200" id="UDo-ne-Gqm"/>
                                     <constraint firstItem="QG9-Cq-npJ" firstAttribute="height" secondItem="31H-cU-aTE" secondAttribute="height" multiplier="1/3" id="gAb-74-URF"/>
@@ -422,22 +432,12 @@
                                     <outlet property="userImageView" destination="QG9-Cq-npJ" id="sKO-TP-PES"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-aa-9AT">
-                                <rect key="frame" x="10" y="12" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="fBF-Cz-hZr"/>
-                                    <constraint firstAttribute="width" constant="20" id="yhi-ot-8nB"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98431372640000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tPz-gK-pfP" firstAttribute="top" secondItem="hmZ-6k-B5E" secondAttribute="bottom" id="FCu-nQ-a3j"/>
                             <constraint firstItem="tPz-gK-pfP" firstAttribute="leading" secondItem="3QK-de-NCO" secondAttribute="leading" id="Opm-Yk-nxB"/>
                             <constraint firstAttribute="trailing" secondItem="tPz-gK-pfP" secondAttribute="trailing" id="ZZI-0h-JAK"/>
-                            <constraint firstItem="1Lr-aa-9AT" firstAttribute="leading" secondItem="3QK-de-NCO" secondAttribute="leading" constant="10" id="ghC-uy-rF0"/>
-                            <constraint firstItem="1Lr-aa-9AT" firstAttribute="top" secondItem="3QK-de-NCO" secondAttribute="top" constant="12" id="sDt-U3-tcg"/>
                         </constraints>
                     </view>
                     <connections>
